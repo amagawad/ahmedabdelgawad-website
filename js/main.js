@@ -1,3 +1,22 @@
+// Transparent nav over dark hero (home page only)
+(function heroNav() {
+  const hero = document.querySelector('.hero');
+  const nav  = document.querySelector('.site-nav');
+  if (!hero || !nav) return;
+
+  const toggle = () => {
+    const threshold = hero.offsetTop + hero.offsetHeight - nav.offsetHeight;
+    if (window.scrollY < threshold) {
+      nav.classList.add('nav-transparent');
+    } else {
+      nav.classList.remove('nav-transparent');
+    }
+  };
+
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
+})();
+
 // Mobile hamburger menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks  = document.querySelector('.nav-links');

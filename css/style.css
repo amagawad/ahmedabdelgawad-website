@@ -87,6 +87,17 @@ section { padding: 88px 0; }
 
 .nav-links a.active { color: var(--near-black); font-weight: 600; }
 
+/* Transparent nav overlay (used on home page over dark hero) */
+.nav-transparent {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  backdrop-filter: none !important;
+}
+.nav-transparent .nav-logo { color: #ffffff; }
+.nav-transparent .nav-links a { color: rgba(255, 255, 255, 0.72); }
+.nav-transparent .nav-links a:hover { color: #ffffff; }
+.nav-transparent .hamburger span { background: #ffffff; }
+
 /* Hamburger (mobile) */
 .hamburger {
   display: none;
@@ -180,7 +191,10 @@ h3 { font-size: 1.15rem; margin-bottom: 8px; letter-spacing: -0.015em; }
 p { color: var(--secondary); line-height: 1.75; }
 
 /* ----- Hero ----- */
-.hero { padding: 96px 0 104px; }
+.hero {
+  padding: 96px 0 104px;
+  background: #0F2044;
+}
 
 .hero-grid {
   display: grid;
@@ -195,21 +209,40 @@ p { color: var(--secondary); line-height: 1.75; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--tertiary);
+  color: rgba(255, 255, 255, 0.55);
   margin-bottom: 20px;
 }
 
-.hero h1 { margin-bottom: 24px; }
+.hero h1 { margin-bottom: 24px; color: #ffffff; }
 
 .hero-subtitle {
   font-size: 1.1rem;
-  color: var(--secondary);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.75;
   margin-bottom: 40px;
   max-width: 540px;
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Buttons inside the hero need to work on dark background */
+.hero .btn-primary {
+  background: #ffffff;
+  color: #0F2044;
+  border-color: #ffffff;
+}
+.hero .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+}
+.hero .btn-outline {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+}
 
 .hero-image-wrap {
   position: relative;
@@ -221,18 +254,19 @@ p { color: var(--secondary); line-height: 1.75; }
   object-fit: cover;
   border-radius: 6px;
   filter: grayscale(8%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
 .hero-image-placeholder {
   width: 100%;
   aspect-ratio: 4/5;
-  background: var(--bg-alt);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  border: 2px dashed var(--border);
+  border: 2px dashed rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--tertiary);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.85rem;
   text-align: center;
   padding: 20px;
