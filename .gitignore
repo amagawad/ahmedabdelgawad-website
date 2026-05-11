@@ -1,0 +1,5 @@
+# Claude Code settings (dev tool — not needed in repo)
+.claude/
+
+# Mac system files
+.DS_Store
